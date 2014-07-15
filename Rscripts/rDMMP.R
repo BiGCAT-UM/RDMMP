@@ -165,8 +165,6 @@ DMMR <- function(SFile,WFile,kPower,sResultFile) { # Calculate Markov Mean Prope
 # MAIN
 ##########################################################################################################
 
-start.time <- Sys.time()            # start recording the execution time 
-
 #-------------------------------------------------------------------------------
 # PARAMETERS
 #-------------------------------------------------------------------------------
@@ -182,10 +180,6 @@ cat("by Cristian R Munteanu | muntisa [at] gmail [dot] com\n\n")
 cat("Running ... please wait ...\n")
 
 # Run main funtion to calculate the descriptors -> output = a file
-DMMR(SFile,WFile,kPower,sResultFile)
+print(system.time(DMMR(SFile,WFile,kPower,sResultFile)))
 
-end.time <- Sys.time()
-time.taken <- end.time - start.time
-cat(sprintf("\nDone!\n\nExecution time:\n %3.2f secs\n %3.2f mins\n %3.2f hours\n\n",time.taken,time.taken/60,time.taken/60/60))
-
-# 610 SMILES / min !
+# aprox. 600 SMILES / min !
