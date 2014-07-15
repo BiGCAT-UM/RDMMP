@@ -7,6 +7,7 @@
 library(ChemmineR)
 library(base)
 library(expm)
+library(MASS)
 
 # --------- FUNCTIONS --------------------------------------------------------------------------------
 DMMR <- function(SFile,WFile,kPower,sResultFile) { # Calculate Markov Mean Properties for drugs; output = CVS file
@@ -157,7 +158,7 @@ DMMR <- function(SFile,WFile,kPower,sResultFile) { # Calculate Markov Mean Prope
     sResults <- sprintf("%s\n",sResults)
   }
   # cat(sResults) # print final output
-  write(sResults, file="rDMMP_Results.csv", append=F) # create the result file with the header
+  write(sResults, file=sResultFile, append=F) # create the result file with the header
 }
 
 ##########################################################################################################
